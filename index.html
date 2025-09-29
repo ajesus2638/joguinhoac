@@ -74,72 +74,26 @@ input{
 let name1='', name2='';
 
 const story = [
-{ text:(n1,n2)=>`Você e ${n2} se encontram pela primeira vez numa festa animada. O que você faz?`,
-  choices:[{text:"Se aproximar e puxar conversa", next:1},{text:"Ficar observando de longe", next:2}] },
-{ text:(n1,n2)=>`${n2} sorri para você. Como você responde?`,
-  choices:[{text:"Sorrir de volta e se apresentar", next:3},{text:"Fingir que não percebeu", next:4}] },
-{ text:(n1,n2)=>`Você observa ${n2} dançando com amigos. O que fazer?`,
-  choices:[{text:"Ir convidar para dançar com você", next:5},{text:"Continuar observando timidamente", next:4}] },
-{ text:(n1,n2)=>`Vocês começam a conversar e descobrem interesses em comum. Qual tema abordar primeiro?`,
-  choices:[{text:"Música favorita", next:6},{text:"Filmes e séries", next:7}] },
-{ text:(n1,n2)=>`Você decide ignorar ${n2} por enquanto. Ela parece se divertir com outras pessoas. O que fazer?`,
-  choices:[{text:"Ir falar com ela mais tarde", next:3},{text:"Decidir ir embora", next:50}] },
-{ text:(n1,n2)=>`Falando sobre música, vocês percebem que compartilham várias bandas favoritas. O que fazer?`,
-  choices:[{text:"Convidar para ouvir música juntos depois", next:8},{text:"Só comentar e continuar a festa", next:9}] },
-{ text:(n1,n2)=>`Falando sobre filmes, descobrem que ambos adoram comédias românticas. O que sugerir?`,
-  choices:[{text:"Marcar para assistir um filme juntos", next:8},{text:"Só comentar e voltar para a festa", next:9}] },
-{ text:(n1,n2)=>`Vocês marcam de se encontrar para ouvir música. Ela aceita animada. Qual lugar escolher?`,
-  choices:[{text:"Um café tranquilo", next:10},{text:"Parque com música ao vivo", next:11}] },
-{ text:(n1,n2)=>`Você apenas comenta sobre música na festa. Ela parece interessada. Qual próxima ação?`,
-  choices:[{text:"Tentar puxar assunto mais tarde", next:10},{text:"Decidir ir embora", next:50}] },
-{ text:(n1,n2)=>`No café, vocês conversam por horas e riem juntos. O que fazer?`,
-  choices:[{text:"Dar um elogio sincero", next:12},{text:"Oferecer um presente pequeno e fofo", next:13}] },
-{ text:(n1,n2)=>`Vocês continuam conversando e a química cresce. Qual próximo passo?`,
-  choices:[{text:"Convidar para passear no parque", next:14},{text:"Sugerir outra saída divertida", next:15}] },
-{ text:(n1,n2)=>`Ela sorri timidamente ao seu elogio. Como continuar?`,
-  choices:[{text:"Segurar a mão dela", next:16},{text:"Apenas sorrir de volta", next:17}] },
-{ text:(n1,n2)=>`Você entrega um pequeno presente. Ela adora. Qual reação?`,
-  choices:[{text:"Abraçá-la", next:16},{text:"Sorrir e continuar a conversa", next:17}] },
-{ text:(n1,n2)=>`Vocês passeiam no parque, rindo e conversando sobre tudo. Qual ideia seguir?`,
-  choices:[{text:"Sentar e conversar mais intimamente", next:18},{text:"Continuar andando e explorando o parque", next:19}] },
-{ text:(n1,n2)=>`Vocês decidem fazer outra atividade divertida juntos. O que escolher?`,
-  choices:[{text:"Ir a uma sorveteria", next:18},{text:"Jogar algum jogo juntos", next:19}] },
-{ text:(n1,n2)=>`Momento especial: vocês sentam juntos. Qual gesto escolher?`,
-  choices:[{text:"Segurar a mão dela", next:20},{text:"Falar algo doce sobre o momento", next:20}] },
-{ text:(n1,n2)=>`Vocês continuam explorando a amizade e atração mútua. Próximo passo?`,
-  choices:[{text:"Convidar para jantar fora", next:21},{text:"Planejar um passeio surpresa", next:22}] },
-{ text:(n1,n2)=>`A festa termina e vocês se despedem. Como deixar boa impressão?`,
-  choices:[{text:"Dar um abraço apertado", next:23},{text:"Sorrir e dizer 'até logo' com carinho", next:24}] },
-{ text:(n1,n2)=>`Vocês começam a trocar mensagens diariamente, conhecendo mais um ao outro. Qual assunto abrir primeiro?`,
-  choices:[{text:"Compartilhar uma música", next:25},{text:"Contar sobre um filme recente", next:26}] },
-{ text:(n1,n2)=>`Vocês marcam um passeio no fim de semana. Qual destino escolher?`,
-  choices:[{text:"Parque da cidade", next:27},{text:"Sorveteria charmosa", next:28}] },
-
-// Capítulos 22 a 50 já implementados conforme o trecho anterior
-{ text:(n1,n2)=>`No parque, ${n2} encontra uma fonte bonita. O que fazer?`,
-  choices:[{text:"Sentar perto e conversar", next:29},{text:"Tirar fotos juntos", next:30}] },
-{ text:(n1,n2)=>`Vocês tiram fotos e riem juntos. Próximo passo?`,
-  choices:[{text:"Ir tomar um sorvete", next:31},{text:"Dar um passeio pelo parque", next:32}] },
-{ text:(n1,n2)=>`Vocês tomam sorvete juntos. Ela parece gostar da sua companhia. Qual gesto fazer?`,
-  choices:[{text:"Oferecer um pedaço do seu sorvete", next:33},{text:"Contar uma história engraçada", next:34}] },
-{ text:(n1,n2)=>`Vocês continuam conversando e rindo. Momento ideal para...`,
-  choices:[{text:"Segurar a mão dela discretamente", next:35},{text:"Apenas sorrir", next:36}] },
-{ text:(n1,n2)=>`Vocês decidem ir ao cinema juntos. Qual filme escolher?`,
-  choices:[{text:"Comédia romântica", next:37},{text:"Aventura/ação", next:38}] },
-{ text:(n1,n2)=>`Após o filme, ela comenta o quanto se divertiu. Qual resposta dar?`,
-  choices:[{text:"Sorrir e dizer que adorou também", next:39},{text:"Fazer uma piada sobre o filme", next:40}] },
-{ text:(n1,n2)=>`Vocês começam a planejar o próximo encontro. O que propor?`,
-  choices:[{text:"Um jantar especial", next:41},{text:"Passeio ao ar livre", next:42}] },
-{ text:(n1,n2)=>`No jantar, vocês conversam sobre sonhos e desejos. Qual assunto abrir primeiro?`,
-  choices:[{text:"Falar sobre viagens", next:43},{text:"Falar sobre música", next:44}] },
-{ text:(n1,n2)=>`Vocês decidem escrever juntos uma playlist de músicas favoritas. Como proceder?`,
-  choices:[{text:"Escolher músicas que marcaram momentos especiais", next:45},{text:"Escolher músicas engraçadas", next:46}] },
-{ text:(n1,n2)=>`Vocês passeiam ao entardecer, aproveitando o clima. Próxima ação?`,
-  choices:[{text:"Parar para observar o pôr do sol", next:47},{text:"Continuar passeando e conversando", next:48}] },
-{ text:(n1,n2)=>`No pôr do sol, vocês sentem uma conexão especial. O que fazer?`,
-  choices:[{text:"Dar um abraço apertado", next:49},{text:"Segurar a mão dela", next:49}] },
-{ text:(n1,n2)=>`Parabéns! ${name1} e ${name2} completaram os primeiros 50 capítulos da história de amor. A história continua crescendo e o romance está florescendo!`,
-  choices:[{text:"Reiniciar aventura 🔄", next:0}] }
+  { text:(n1,n2)=>`Você e ${n2} se encontram pela primeira vez numa festa animada. O que você faz?`,
+    choices:[{text:"Se aproximar e puxar conversa", next:1},{text:"Ficar observando de longe", next:2}] },
+  { text:(n1,n2)=>`${n2} sorri para você. Como você responde?`,
+    choices:[{text:"Sorrir de volta e se apresentar", next:3},{text:"Fingir que não percebeu", next:4}] },
+  { text:(n1,n2)=>`Você observa ${n2} dançando com amigos. O que fazer?`,
+    choices:[{text:"Ir convidar para dançar com você", next:5},{text:"Continuar observando timidamente", next:4}] },
+  { text:(n1,n2)=>`Vocês começam a conversar e descobrem interesses em comum. Qual tema abordar primeiro?`,
+    choices:[{text:"Música favorita", next:6},{text:"Filmes e séries", next:7}] },
+  { text:(n1,n2)=>`Você decide ignorar ${n2} por enquanto. Ela parece se divertir com outras pessoas. O que fazer?`,
+    choices:[{text:"Ir falar com ela mais tarde", next:3},{text:"Decidir ir embora", next:50}] },
+  { text:(n1,n2)=>`Falando sobre música, vocês percebem que compartilham várias bandas favoritas. O que fazer?`,
+    choices:[{text:"Convidar para ouvir música juntos depois", next:8},{text:"Só comentar e continuar a festa", next:9}] },
+  { text:(n1,n2)=>`Falando sobre filmes, descobrem que ambos adoram comédias românticas. O que sugerir?`,
+    choices:[{text:"Marcar para assistir um filme juntos", next:8},{text:"Só comentar e voltar para a festa", next:9}] },
+  { text:(n1,n2)=>`Vocês marcam de se encontrar para ouvir música. Ela aceita animada. Qual lugar escolher?`,
+    choices:[{text:"Um café tranquilo", next:10},{text:"Parque com música ao vivo", next:11}] },
+  { text:(n1,n2)=>`Você apenas comenta sobre música na festa. Ela parece interessada. Qual próxima ação?`,
+    choices:[{text:"Tentar puxar assunto mais tarde", next:10},{text:"Decidir ir embora", next:50}] },
+  { text:(n1,n2)=>`No café, vocês conversam por horas e riem juntos. O que fazer?`,
+    choices:[{text:"Dar um elogio sincero", next:12},{text:"Oferecer um presente pequeno e fofo", next:13}] },
   { text:(n1,n2)=>`Depois do pôr do sol, vocês decidem planejar um fim de semana especial. Qual atividade escolher?`,
   choices:[{text:"Passeio à praia", next:51},{text:"Passeio no campo", next:52}] },
 { text:(n1,n2)=>`Na praia, ${n2} se diverte com a água e a areia. O que fazer?`,
@@ -173,7 +127,8 @@ const story = [
 { text:(n1,n2)=>`Noite de filmes, risadas e pipoca. Qual próximo gesto?`,
   choices:[{text:"Segurar a mão dela discretamente", next:69},{text:"Dar um abraço confortável", next:70}] },
 { text:(n1,n2)=>`Parabéns! ${n1} e ${n2} completaram os 70 capítulos da história de amor. O romance continua florescendo e aventuras ainda virão!`,
-  }{ text:(n1,n2)=>`Depois da noite de filmes, vocês decidem planejar uma aventura ao ar livre. Qual escolher?`,
+  choices:[{text:"Reiniciar aventura 🔄", next:0}] }
+{ text:(n1,n2)=>`Depois da noite de filmes, vocês decidem planejar uma aventura ao ar livre. Qual escolher?`,
   choices:[{text:"Trilha na montanha", next:71},{text:"Passeio de bicicleta pelo parque", next:72}] },
 { text:(n1,n2)=>`Na trilha, o cenário é lindo. Qual ação romântica fazer?`,
   choices:[{text:"Parar para admirar a vista juntos", next:73},{text:"Tirar uma selfie divertida juntos", next:74}] },
@@ -221,6 +176,9 @@ const story = [
   choices:[{text:"Reiniciar aventura 🔄", next:0}] }
 
 
+
+  { text:(n1,n2)=>`Parabéns! ${name1} e ${name2} completaram os 100 capítulos da história interativa. O romance, a diversão e a cumplicidade continuam crescendo cada vez mais!`,
+    choices:[{text:"Reiniciar aventura 🔄", next:0}] }
 ];
 
 function startStory(){
@@ -252,12 +210,6 @@ function showChapter(index){
     choicesDiv.appendChild(btn);
   });
 }
-
 </script>
-
-
 </body>
 </html>
-
-
-
