@@ -71,6 +71,32 @@ input{
 </div>
 
 <script>
+
+  chapter.choices.forEach(c => {
+  const btn = document.createElement('button');
+  btn.textContent = c.text;
+  btn.onclick = () => {
+    if (c.branch) {
+      switch(c.branch){
+        case "romance":
+          currentIndex = c.next;
+          break;
+        case "aventura":
+          currentIndex = c.next;
+          break;
+        case "surpresa":
+          currentIndex = c.next;
+          break;
+        default:
+          currentIndex = c.next;
+      }
+    } else {
+      currentIndex = c.next;
+    }
+    showChapter(currentIndex);
+  }
+  choicesDiv.appendChild(btn);
+});
 let name1='', name2='', currentIndex=0;
 
 const story = [
@@ -208,3 +234,4 @@ function showChapter(index){
 </script>
 </body>
 </html>
+
